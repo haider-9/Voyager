@@ -3,6 +3,8 @@ import type { Route } from "./+types/home";
 import Slider from "~/components/slider";
 import Tiltedmarquee from "~/components/tiltedmarquee";
 import Services from "~/components/services";
+import RentServices from "~/components/rentservices";
+import TripsGrid from "~/components/tripsgrid";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -14,14 +16,15 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return (
     <>
-      <header>
-        <Header />
-      </header>
+      <Header />
+
       <main>
         <Slider />
         <Tiltedmarquee />
-        <Services/>
-      </main>
+        <Services />
+        <RentServices />
+        <TripsGrid/>
+        </main>
     </>
   );
 }

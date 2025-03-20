@@ -7,7 +7,6 @@ import {
   InfoIcon,
   Settings,
   Sun,
-  
 } from "lucide-react";
 
 export default function Header() {
@@ -44,7 +43,7 @@ export default function Header() {
               {index === navItems.length - 2 && <li>|</li>}
             </>
           ))}
-        <Sun className="text-yellow-400"/>
+          <Sun className="text-yellow-400" />
         </ul>
       </div>
     </nav>

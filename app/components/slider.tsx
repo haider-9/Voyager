@@ -5,6 +5,13 @@ export default function Slider() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = 3;
 
+  // Pexels image URLs for travel/adventure themes
+  const pexelsImages = [
+    "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1", // Mountain landscape
+    "https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1", // Beach sunset
+    "https://images.pexels.com/photos/1271619/pexels-photo-1271619.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1", // City exploration
+  ];
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % totalSlides);
@@ -20,30 +27,18 @@ export default function Slider() {
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
-          <div className="slider-item h-screen w-full flex-shrink-0">
-            <img
-              src="https://dummyimage.com/1500/00000"
-              alt=""
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="slider-item h-screen w-full flex-shrink-0">
-            <img
-              src="https://dummyimage.com/1400/00000"
-              alt=""
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="slider-item h-screen w-full flex-shrink-0">
-            <img
-              src="https://dummyimage.com/1600/00000"
-              alt=""
-              className="w-full h-full object-cover"
-            />
-          </div>
+          {pexelsImages.map((imageUrl, index) => (
+            <div key={index} className="slider-item h-screen w-full flex-shrink-0">
+              <img
+                src={imageUrl}
+                alt={`Travel destination ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
         </div>
       </div>
-      <div className="absolute top-96 left-50 p-10 text-white rounded-3xl border backdrop-blur-xs flex flex-col  gap-2 bg-black/60">
+      <div className="absolute top-96 left-50 p-10 text-white rounded-3xl border backdrop-blur-xs flex flex-col gap-2 bg-black/60">
         <h1 className="heading ">Explore the world with exciting people</h1>
         <h2 className="subheading">
           We help people find co travellers and also structure their travel
