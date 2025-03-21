@@ -42,7 +42,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
         <ScrollRestoration />
         <Scripts />
-        <footer className="relative w-full bottom-0 ">
+        <footer>
           <Footer />
         </footer>
       </body>

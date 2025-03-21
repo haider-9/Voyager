@@ -24,25 +24,25 @@ export default function Footer() {
           href="#"
           className="text-blue-500 hover:drop-shadow-[0_0_10px_#1877F2] transition duration-300"
         >
-          <FaFacebookF size={28} />
+          <FaFacebookF size={24} />
         </a>
         <a
           href="#"
           className="text-white hover:drop-shadow-[0_0_10px_#FFFFFF] transition duration-300"
         >
-          <FaXTwitter size={28} />
+          <FaXTwitter size={24} />
         </a>
         <a
           href="#"
           className="text-pink-500 hover:drop-shadow-[0_0_10px_#E4405F] transition duration-300"
         >
-          <FaInstagram size={28} />
+          <FaInstagram size={24} />
         </a>
         <a
           href="#"
           className="text-blue-400 hover:drop-shadow-[0_0_10px_#0077B5] transition duration-300"
         >
-          <FaLinkedin size={28} />
+          <FaLinkedin size={24} />
         </a>
       </div>
     </footer>

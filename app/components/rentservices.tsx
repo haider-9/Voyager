@@ -1,9 +1,16 @@
 import { Button } from "./ui/button";
 import { CarFront, Bed } from "lucide-react";
+import { motion } from "framer-motion";
+
 export default function RentServices() {
   return (
     <div className="container px-6 mx-auto">
-      <div className="flex items-center justify-between mb-12">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex items-center justify-between mb-12"
+      >
         <div className="flex flex-col gap-2">
           <p className="text-gray-400">Where do you want to go</p>
           <h2 className="heading text-white">Let us worry about your plans,</h2>
@@ -34,18 +41,31 @@ export default function RentServices() {
             <span className="absolute left-0 top-0 h-full w-0 bg-[var(--color-slime)] ease-in-out transition-all duration-500 group-hover:w-full -z-0"></span>
           </Button>
         </div>
-      </div>
+      </motion.div>
       <div className="flex items-center gap-12">
-        <div className="overflow-hidden w-2/3 h-[600px] rounded-3xl">
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="overflow-hidden w-2/3 h-[600px] rounded-3xl"
+        >
           <img
             src="/assets/location.jpg"
             alt="Travel destination"
             className="object-cover w-full h-full"
           />
-        </div>
+        </motion.div>
 
-        <div className="flex gap-8 items-start flex-col w-1/3">
-          <div className="flex gap-6 flex-col">
+        <motion.div 
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex gap-8 items-start flex-col w-1/3"
+        >
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            className="flex gap-6 flex-col"
+          >
             <div className="flex items-center justify-center rounded-full bg-white p-4 w-12 h-12">
               <CarFront className="text-black w-6 h-6" />
             </div>
@@ -75,8 +95,11 @@ export default function RentServices() {
                 </svg>
               </span>
             </div>
-          </div>
-          <div className="flex gap-6 flex-col">
+          </motion.div>
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            className="flex gap-6 flex-col"
+          >
             <div className="flex items-center justify-center rounded-full bg-white p-4 w-12 h-12">
               <Bed className="text-black w-6 h-6" />
             </div>
@@ -106,8 +129,8 @@ export default function RentServices() {
                 </svg>
               </span>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );
