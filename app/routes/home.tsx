@@ -5,6 +5,7 @@ import Tiltedmarquee from "~/components/tiltedmarquee";
 import Services from "~/components/services";
 import RentServices from "~/components/rentservices";
 import TripsGrid from "~/components/tripsgrid";
+import Testimonials from "~/components/testimonials";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -23,8 +24,9 @@ export default function Home() {
         <Tiltedmarquee />
         <Services />
         <RentServices />
-        <TripsGrid/>
-        </main>
+        <TripsGrid />
+        <Testimonials />
+      </main>
     </>
   );
 }
