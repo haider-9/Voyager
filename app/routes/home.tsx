@@ -6,6 +6,7 @@ import Services from "~/components/services";
 import RentServices from "~/components/rentservices";
 import TripsGrid from "~/components/tripsgrid";
 import Testimonials from "~/components/testimonials";
+import Ticket from "~/components/ticket";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -17,8 +18,6 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return (
     <>
-      <Header />
-
       <main>
         <Slider />
         <Tiltedmarquee />
@@ -26,6 +25,7 @@ export default function Home() {
         <RentServices />
         <TripsGrid />
         <Testimonials />
+        <Ticket />
       </main>
     </>
   );
