@@ -21,9 +21,14 @@ export default function TiltedMarquee() {
         
         // Set up animation
         let position = 0;
-        const pixelsPerFrame = 2; // Adjust for speed
+        const baseSpeed = 2; // Base pixels per frame
         
         const animate = () => {
+          // Adjust speed based on viewport width
+          const viewportWidth = window.innerWidth;
+          const speedMultiplier = viewportWidth / 1920; // 1920 is base width
+          const pixelsPerFrame = baseSpeed * speedMultiplier;
+          
           position -= pixelsPerFrame;
           
           // Reset position when first element is completely out of view
@@ -37,10 +42,19 @@ export default function TiltedMarquee() {
           requestAnimationFrame(animate);
         };
         
+        // Add resize listener
+        const handleResize = () => {
+          position = 0;
+          container.style.transform = `translateX(${position}px)`;
+        };
+        
+        window.addEventListener('resize', handleResize);
         requestAnimationFrame(animate);
+        
+        // Cleanup resize listener
+        return () => window.removeEventListener('resize', handleResize);
       }
     };
-
     marqueeAnimation();
     
     // Cleanup function

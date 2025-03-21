@@ -61,7 +61,7 @@ export default function Contact() {
   return (
     <>
       <motion.div
-        className="pt-30"
+        className="pt-30 px-4 md:px-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -77,14 +77,15 @@ export default function Contact() {
         </motion.div>
         <div className="flex justify-center">
           <motion.form
-            className="border w-[36rem] rounded-lg"
+            className="border w-full md:w-[36rem] rounded-lg"
             variants={formVariants}
             initial="hidden"
             animate="visible"
           >
-            <h3 className="text-lg text-start p-6 ">Fill in the form</h3>
-            <div className="flex justify-center py-3 px-8 gap-6 items-center">
+            <h3 className="text-lg text-start p-6">Fill in the form</h3>
+            <div className="flex flex-col md:flex-row justify-center py-3 px-4 md:px-8 gap-6 items-center">
               <motion.div
+                className="w-full"
                 variants={inputVariants}
                 custom={1}
                 initial="hidden"
@@ -94,7 +95,7 @@ export default function Contact() {
                 <motion.input
                   type="text"
                   id="name"
-                  className="input bg-white p-2 text-black rounded-md"
+                  className="input bg-white p-2 text-black rounded-md w-full"
                   whileFocus={{
                     scale: 1.02,
                     boxShadow: "0 0 0 2px var(--color-slime)",
@@ -102,6 +103,7 @@ export default function Contact() {
                 />
               </motion.div>
               <motion.div
+                className="w-full"
                 variants={inputVariants}
                 custom={2}
                 initial="hidden"
@@ -111,7 +113,7 @@ export default function Contact() {
                 <motion.input
                   type="text"
                   id="secondName"
-                  className="input bg-white p-2 text-black rounded-md"
+                  className="input bg-white p-2 text-black rounded-md w-full"
                   whileFocus={{
                     scale: 1.02,
                     boxShadow: "0 0 0 2px var(--color-slime)",
@@ -119,8 +121,9 @@ export default function Contact() {
                 />
               </motion.div>
             </div>
-            <div className="flex justify-center items-center py-3 px-8 gap-6 ">
+            <div className="flex flex-col md:flex-row justify-center items-center py-3 px-4 md:px-8 gap-6">
               <motion.div
+                className="w-full"
                 variants={inputVariants}
                 custom={3}
                 initial="hidden"
@@ -130,7 +133,7 @@ export default function Contact() {
                 <motion.input
                   type="text"
                   id="email"
-                  className="input bg-white p-2 text-black rounded-md"
+                  className="input bg-white p-2 text-black rounded-md w-full"
                   whileFocus={{
                     scale: 1.02,
                     boxShadow: "0 0 0 2px var(--color-slime)",
@@ -138,6 +141,7 @@ export default function Contact() {
                 />
               </motion.div>
               <motion.div
+                className="w-full"
                 variants={inputVariants}
                 custom={4}
                 initial="hidden"
@@ -147,7 +151,7 @@ export default function Contact() {
                 <motion.input
                   type="text"
                   id="phone"
-                  className="input bg-white p-2 text-black rounded-md"
+                  className="input bg-white p-2 text-black rounded-md w-full"
                   whileFocus={{
                     scale: 1.02,
                     boxShadow: "0 0 0 2px var(--color-slime)",
@@ -155,7 +159,7 @@ export default function Contact() {
                 />
               </motion.div>
             </div>
-            <div className="px-8 py-3 flex items-center justify-center">
+            <div className="px-4 md:px-8 py-3 flex items-center justify-center">
               <motion.div
                 className="w-full"
                 variants={inputVariants}
@@ -176,7 +180,7 @@ export default function Contact() {
               </motion.div>
             </div>
             <motion.div
-              className="flex flex-col justify-center py-3 px-8"
+              className="flex flex-col justify-center py-3 px-4 md:px-8"
               variants={inputVariants}
               custom={6}
               initial="hidden"
@@ -198,9 +202,9 @@ export default function Contact() {
         </div>
       </motion.div>
 
-      <div className="flex justify-center gap-6 mt-10">
+      <div className="flex flex-col md:flex-row justify-center gap-6 mt-10 px-4 md:px-6">
         <motion.div
-          className="flex flex-col justify-center cursor-pointer items-center py-20 px-40 transition-all duration-200 gap-4 group rounded-lg"
+          className="flex flex-col justify-center cursor-pointer items-center py-10 md:py-20 px-6 md:px-40 transition-all duration-200 gap-4 group rounded-lg"
           variants={cardVariants}
           initial="hidden"
           whileInView="visible"
@@ -215,7 +219,7 @@ export default function Contact() {
             <Headphones className="w-10 h-10" />
           </motion.div>
           <p className="font-bold">Customer Support</p>
-          <p>We're here to help with any queries.</p>
+          <p className="text-center">We're here to help with any queries.</p>
           <div className="flex items-center justify-center gap-2">
             <span className="text-[var(--color-slime)]">Contact Support</span>
             <motion.span
@@ -229,7 +233,7 @@ export default function Contact() {
           </div>
         </motion.div>
         <motion.div
-          className="flex flex-col justify-center items-center cursor-pointer py-20 px-40 gap-4 rounded-lg"
+          className="flex flex-col justify-center items-center cursor-pointer py-10 md:py-20 px-6 md:px-40 gap-4 rounded-lg"
           variants={cardVariants}
           initial="hidden"
           whileInView="visible"
@@ -245,7 +249,7 @@ export default function Contact() {
             <LucideMessageSquare className="w-10 h-10" />
           </motion.div>
           <p className="font-bold">FAQ</p>
-          <p>We're here to help with any queries.</p>
+          <p className="text-center">We're here to help with any queries.</p>
           <div className="flex items-center justify-center gap-2">
             <span className="text-[var(--color-slime)]">Contact FAQ</span>
             <motion.span
@@ -260,9 +264,9 @@ export default function Contact() {
         </motion.div>
       </div>
 
-      <div className="flex justify-center items-center gap-10 p-10">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-10 p-4 md:p-10">
         <motion.div
-          className="w-1/2 h-80 rounded-lg overflow-hidden"
+          className="w-full md:w-1/2 h-80 rounded-lg overflow-hidden"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -277,13 +281,13 @@ export default function Contact() {
           />
         </motion.div>
         <motion.div
-          className="w-1/2"
+          className="w-full md:w-1/2"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <div className="space-y-6 flex flex-col justify-center p-10">
+          <div className="space-y-6 flex flex-col justify-center p-4 md:p-10">
             <motion.div
               className="flex items-start gap-4"
               variants={contactInfoVariants}
