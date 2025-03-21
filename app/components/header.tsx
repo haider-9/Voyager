@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import {
   User,
   AtSign,
@@ -8,8 +8,11 @@ import {
   Settings,
   Sun,
 } from "lucide-react";
+import { Fragment } from "react/jsx-runtime";
 
 export default function Header() {
+  const location = useLocation();
+
   const navItems = [
     { icon: <LucideHome size={16} />, text: "Home", path: "/" },
     { icon: <AtSign size={16} />, text: "Contact", path: "/contact" },
@@ -33,19 +36,26 @@ export default function Header() {
       <div>
         <ul className="flex items-center gap-4 text-white text-semibold">
           {navItems.map((item, index) => (
-            <>
-              <li
-                key={item.text}
-                className=" flex items-center justify-center gap-1"
-              >
-                {item.icon}
-
-                <Link to={item.path}>{item.text}</Link>
+            <Fragment key={item.text}>
+              <li className="flex items-center justify-center gap-1">
+                <Link
+                  to={item.path}
+                  className={`flex items-center gap-1 px-3 py-1 rounded-md transition-colors duration-200 
+                    ${
+                      location.pathname === item.path
+                        ? "bg-white/20 font-bold"
+                        : ""
+                    }
+                    hover:bg-white/10`}
+                >
+                  {item.icon}
+                  <span>{item.text}</span>
+                </Link>
               </li>
               {index === navItems.length - 2 && <li>|</li>}
-            </>
+            </Fragment>
           ))}
-          <Sun className="text-yellow-400" />
+          <Sun className="text-yellow-400 cursor-pointer hover:text-yellow-300 transition-colors duration-200" />
         </ul>
       </div>
     </nav>
